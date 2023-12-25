@@ -6,7 +6,7 @@ def test_create():
     md = Markdown()
 
     # Adding sections and text
-    section1 = md.add_node('', title='1st Section', content='This is Section 1 content.')
+    section1 = md.add_node('', title='1st Section #1', content='This is Section 1 content.')
     section1.add_text('Additional text for Section 1.')
     ss1 = section1.add_node(title="1st Subsection", content="A sub section!")
     
@@ -27,9 +27,8 @@ def test_read():
 
     print('#################')
     node = md.get_node('SubSubSection')
-    print(node.content)
-    print()
-    print(node.children)
+    
+    print(md.document)
 
 
 def test_read_edit_write():
@@ -55,6 +54,7 @@ def test_read_edit_write():
     md.save_to_file('example.md')
     
     print(md.document)
+    md.show()
 
 
 if __name__ == "__main__":

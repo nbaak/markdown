@@ -74,8 +74,9 @@ class Markdown:
                 continue
 
             if line.startswith('#'):
+                left = line.split(' ')[0]
                 # Determine the header level
-                header_level = line.count('#')
+                header_level = left.count('#')
                 title = line.strip('# ').strip()
                 new_section = MDNode(title=title)
 
