@@ -7,16 +7,9 @@ My attempt to crreate a Markdown Editor.
 Example:
 
 ```python
-
-                        document = Markdown('README.md')
-
-                        document.add_node('', title='headline')
-
-                        document.add_text('hello world')
-
-                        document.write()
-
-                        ```
-
-                        
+document = Markdown('README.md')
+document.add_node('', title='headline')
+document.add_text('hello world')
+document.write()
+```
 

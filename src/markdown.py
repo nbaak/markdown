@@ -28,6 +28,16 @@ class MDNode:
     def add_link(self, link_text, link_url):
         link_markdown = f"[{link_text}]({link_url})"
         self.content.append(link_markdown)
+        
+    def add_code_block(self, code, language=None):
+        code = [line.strip() for line in code.strip().splitlines()]
+        code = '\n'.join(code)
+        if language:
+            code_block_markdown = f"```{language}\n{code.strip()}\n```"
+        else:
+            code_block_markdown = f"```\n{code.strip()}\n```"
+            
+        self.content.append(code_block_markdown)
 
     def __str__(self, level=0):
         title_str = f"{self.title}" if self.title else ""

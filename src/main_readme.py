@@ -7,13 +7,15 @@ def main():
     section.add_text('My attempt to crreate a Markdown Editor.')
     
     subsection = section.subsection('How 2 use', 'Example:')
-    subsection.add_text('''```python\n
-                        document = Markdown('README.md')\n
-                        document.add_node('', title='headline')\n
-                        document.add_text('hello world')\n
-                        document.write()\n
-                        ```\n
-                        ''')
+    
+    code_block = """
+                document = Markdown('README.md')
+                document.add_node('', title='headline')
+                document.add_text('hello world')
+                document.write()
+                """ 
+    
+    subsection.add_code_block(code_block, 'python')
     
     document.write()
 

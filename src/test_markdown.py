@@ -26,7 +26,7 @@ def test_read():
     md.show()
 
     print('#################')
-    node = md.get_node('1st Subsection')
+    node = md.get_node('SubSubSection')
     print(node.content)
     print()
     print(node.children)
@@ -41,6 +41,16 @@ def test_read_edit_write():
     
     node2 = md.get_node('SubSubSection')
     node2.add_text('more text')
+    
+    subsection = node.subsection('How 2 use', 'Example:')
+    
+    code_block = """
+                document = Markdown('README.md')
+                document.add_node('', title='headline')
+                document.add_text('hello world')
+                document.write()
+                """
+    subsection.add_code_block(code_block, 'python')
 
     md.save_to_file('example.md')
     

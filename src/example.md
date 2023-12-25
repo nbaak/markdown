@@ -16,6 +16,17 @@ a sub sub section.. let's see.
 
 more text
 
+### How 2 use
+
+Example:
+
+```python
+document = Markdown('README.md')
+document.add_node('', title='headline')
+document.add_text('hello world')
+document.write()
+```
+
 # 2nd Section!
 
 woooooooot
